@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { ShipmentForm } from "@/components/ShipmentForm";
 
 export default async function Home() {
   const shipments = await prisma.shipment.findMany({
@@ -20,6 +21,9 @@ export default async function Home() {
           </li>
         ))}
       </ul>
+
+      <ShipmentForm />
+      
     </main>
   );
 }
